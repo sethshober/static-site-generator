@@ -1,0 +1,15 @@
+extends layout
+
+block content 
+  #wrapper
+      input#postInput(type='text', placeholder='Title')
+      | &#x9;
+      textarea#postTextArea(placeholder='What are you thinking?', rows='10')
+      | &#x9;
+      button#addPostDisabled Add Post
+      | &#x9;
+      #postList
+        each post in posts
+          != post
+      footer
+        a.footer(href='http://sethshober.com/', target='_blank') Seth Shober &copy; sometime in 2015

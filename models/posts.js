@@ -1,3 +1,5 @@
+var fs = require('fs');
+
 function readPosts() {
 
 var files = fs.readdirSync('./posts');

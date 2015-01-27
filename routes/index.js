@@ -1,5 +1,4 @@
 var express = require('express');
-var fs = require('fs');
 var models = require('../models/posts.js');
 var router = express.Router();
 

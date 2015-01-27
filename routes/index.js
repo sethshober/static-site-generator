@@ -1,6 +1,6 @@
 var express = require('express');
 var fs = require('fs');
-var models = require('./models/posts.js');
+var models = require('../models/posts.js');
 //var path = require('path');
 //var jade = require('jade');
 var files = fs.readdirSync('./posts');

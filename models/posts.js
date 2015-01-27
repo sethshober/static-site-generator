@@ -1,5 +1,6 @@
 function readPosts() {
 
+var files = fs.readdirSync('./posts');
 var postChunk = [];
 
     for (var i in files) {
@@ -14,4 +15,4 @@ var postChunk = [];
 
 module.exports = {
 	"readPosts": readPosts
-}
+};

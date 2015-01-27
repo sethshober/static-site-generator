@@ -6,7 +6,7 @@ var postChunk = [];
     	
       var file = fs.readFileSync( './posts/' + files[i] );
 
-          postChunk.push( files[i] );
+      postChunk.push( file );
 
   	}
 

@@ -14,25 +14,33 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-app.use(favicon());
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
-app.use(cookieParser());
-app.public = function (directory) {
+app.publicFiles = function (directory) {
+    console.log("using: " + directory);
     app.use(express.static(directory));
 }
-//app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/users', users);
+app.init = function () {
+    app.use(favicon());
+    app.use(logger('dev'));
+    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded());
+    app.use(cookieParser());
+    //app.use(express.static(path.join(__dirname, 'public')));
 
-/// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
-});
+    app.use('/', routes);
+    app.use('/users', users);
+
+    /// catch 404 and forward to error handler
+    app.use(function(req, res, next) {
+        var err = new Error('Not Found');
+        err.status = 404;
+        next(err);
+    });
+}
+
+
+
+
 
 /// error handlers
 

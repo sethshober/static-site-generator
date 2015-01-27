@@ -13,6 +13,8 @@ var postChunk = [];
 
   	}
 
+  	return postChunk;
+
 }
 
 module.exports = {

@@ -1,15 +1,15 @@
-var fs = require('fs');
+var fs   = require('fs');
 var path = require('path');
 var jade = require('jade');
 
-function readPosts(error) {
+function readPosts(num, error) {
 
 var files = fs.readdirSync(process.cwd() + "/posts");
 var postChunk = [];
-var i = 0;
+var i = num - 10;
 var file;
 
-    while (postChunk.length < 10) {
+    while (postChunk.length < num) {
 
       if ( files[i].indexOf('.jade') !== -1 ) { 
 
